@@ -23,16 +23,13 @@ const Navigation = () => {
   const [nav, setNav] = useState(false);
 
   return (
-    <div className="bg-gradient-to-b from-slate-900 to-slate-700 h-14 font-mono flex justify-between items-center">
-      <div className="text-white ml-5 px-5 text-4xl hover:cursor-pointer hover:text-slate-300">
+    <div className="bg-slate-900 h-20 font-mono flex justify-between items-center">
+      <div className="text-white ml-5 px-5 text-6xl hover:cursor-pointer hover:text-red-400">
         <FontAwesomeIcon icon={faAtlassian} />.
       </div>
-      <ul className="hidden h-full md:flex items-center justify-end text-white px-5 gap-2 text-xs">
+      <ul className="h-full hidden md:flex items-center justify-end text-white px-5 gap-5 text-1xl">
         {links.map(({ id, link, icon }) => (
-          <li
-            key={id}
-            className="p-2 hover:text-blue-300 hover:cursor-pointer "
-          >
+          <li key={id} className="p-2 hover:text-red-400 hover:cursor-pointer">
             <FontAwesomeIcon icon={icon} className="pr-1" />
             {link}
           </li>
