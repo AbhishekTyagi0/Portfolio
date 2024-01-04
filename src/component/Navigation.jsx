@@ -29,7 +29,10 @@ const Navigation = () => {
       </div>
       <ul className="h-full hidden md:flex items-center justify-end text-white px-5 gap-5 text-1xl">
         {links.map(({ id, link, icon }) => (
-          <li key={id} className="p-2 hover:text-red-400 hover:cursor-pointer">
+          <li
+            key={id}
+            className="p-2 hover:text-red-400 hover:cursor-pointer font-bold"
+          >
             <FontAwesomeIcon icon={icon} className="pr-1" />
             {link}
           </li>
