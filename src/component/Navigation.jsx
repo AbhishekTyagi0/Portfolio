@@ -14,8 +14,8 @@ import React, { useState } from "react";
 const links = [
   { id: 1, link: "Home", icon: faHouse },
   { id: 2, link: "skills", icon: faFlask },
-  { id: 3, link: "Experience", icon: faPersonDigging },
   { id: 4, link: "Projects", icon: faListCheck },
+  { id: 3, link: "Experience", icon: faPersonDigging },
   { id: 5, link: "Contact", icon: faIdBadge },
 ];
 

@@ -1,7 +1,7 @@
 import "./App.css";
-import Experience from "./component/Experience";
 import Home from "./component/Home";
 import Navigation from "./component/Navigation";
+import Projects from "./component/Project";
 import Skills from "./component/Skills";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Navigation />
       <Home />
       <Skills />
-      <Experience />
+      <Projects />
     </>
   );
 }
