@@ -44,8 +44,8 @@ const projectList = [
     subject: "Portfolio",
     src: portfolio,
     about: [
-      "create my portfolio website using ReactJs, Tailwind CSS.",
-      "It showcases all my skilled acquired as an frontend developer and some recent projects crafted using reactjs.",
+      "created my portfolio website using ReactJs, Tailwind CSS.",
+      "It showcases all my current skilled acquired as an frontend developer and some recent projects crafted using reactjs.",
     ],
     code: "https://github.com/AbhishekTyagi0/Portfolio",
     live: "you are already here",
@@ -54,8 +54,11 @@ const projectList = [
 
 const Projects = () => {
   return (
-    <div className="h-dvh w-dwh bg-gradient-to-b from-slate-950 to-slate-800 flex flex-col items-center">
-      <h1 className="text-white text-4xl font-bold mb-8">
+    <div
+      id="projects"
+      className="h-dvh w-dwh bg-gradient-to-b from-slate-950 to-slate-800 flex flex-col items-center"
+    >
+      <h1 className="text-white text-4xl font-bold mb-8 max-md:mb-16">
         Frontend <span className="text-red-400">Projects</span>
       </h1>
       {projectList.map(({ id, subject, src, about, code, live }) => (
@@ -68,30 +71,38 @@ const Projects = () => {
               <img
                 src={src}
                 alt="project-image"
-                className="w-64 hover:scale-105 transition-all duration-300 ease-in-out"
+                className="w-64 hover:scale-105 transition-all duration-300 ease-in-out max-md:w-48 max-sm:w-32"
               />
             </a>
           </div>
-          <div className=" w-7/12 h-full p-2">
-            <h2 className="text-white font-bold text-2xl mb-2">{subject}</h2>
+          <div className=" w-7/12 h-full p-2 max-md:p-4 max-md:w-8/12">
+            <h2 className="text-white font-bold text-2xl mb-2 max-md:text-xl max-sm:text-sm">
+              {subject}
+            </h2>
             {about.map((about, index) => (
-              <p key={index} className="text-zinc-400 flex items-center -ml-6">
-                <TbPoint className="pr-2 font-bold text-2xl" />
+              <p
+                key={index}
+                className="text-zinc-400 flex items-center -ml-6 max-md:text-sm max-sm:text-xs"
+              >
+                <TbPoint className="pr-2 font-bold text-2xl max-md:pr-1 max-md:text-sm" />
                 {about}
               </p>
             ))}
           </div>
           <div className="text-white font-bold flex justify-evenly h-full w-2/12 flex-col gap-8">
-            <a href={code} className="hover:text-red-400">
+            <a href={code} className="hover:text-red-400 max-md:text-xs">
               Click me to Check CODE
             </a>
-            <a href={live} className="hover:text-red-400 text-lg">
+            <a
+              href={live}
+              className="hover:text-red-400 text-lg max-md:text-xs"
+            >
               Go to website
             </a>
           </div>
         </div>
       ))}
-      <div className="mt-8 flex justify-start pl-16 w-full text-3xl text-white font-bold">
+      <div className="mt-8 flex justify-start pl-16 w-full text-3xl text-white font-bold max-md:mt-24 max-sm:text-xl">
         FullStack Projects:
         <span className="text-red-400 pl-4"> Comming Soon . . .</span>
       </div>
