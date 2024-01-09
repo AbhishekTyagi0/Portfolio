@@ -1,4 +1,6 @@
 import React from "react";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Home = ({ nav }) => {
   const resume = "/docs/Abhishek_Tyagi_Resume.doc";
@@ -41,6 +43,35 @@ const Home = ({ nav }) => {
           my GitHub portfolio showcases my dedication to delivering engaging and
           impactful projects.
         </p>
+        <ul className="flex gap-8 lg:text-4xl mt-3 items-center">
+          <p className="text-red-400 lg:font-semibold">Find Me On:</p>
+          <li className="hover:scale-125 transition-all duration-300 ease-out">
+            <a href="https://github.com/AbhishekTyagi0" target="_blank">
+              <FaGithub />
+            </a>
+          </li>
+          <li className="hover:scale-125 transition-all duration-300 ease-out">
+            <a
+              href="https://www.linkedin.com/in/abhishek-tyagi007/"
+              target="_blank"
+            >
+              <FaLinkedin />
+            </a>
+          </li>
+          <li className="hover:scale-125 transition-all duration-300 ease-out">
+            <a href="https://twitter.com/abhishek43100" target="_blank">
+              <FaXTwitter />
+            </a>
+          </li>
+          <li className="hover:scale-125 transition-all duration-300 ease-out">
+            <a
+              href="https://www.instagram.com/i_abhishek_tyagi/"
+              target="_blank"
+            >
+              <FaInstagram />
+            </a>
+          </li>
+        </ul>
       </div>
 
       <div className="p-1 mr-32 flex justify-start -mt-32 max-md:justify-center max-md:mr-0 max-sm:mt-20">
