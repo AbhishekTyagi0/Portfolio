@@ -1,7 +1,7 @@
 import React from "react";
 
 const Home = ({ nav }) => {
-  const resume = "../public/docs/Abhishek_Tyagi_Resume.doc";
+  const resume = "/docs/Abhishek_Tyagi_Resume.doc";
   return (
     <div
       id="home"
@@ -44,7 +44,7 @@ const Home = ({ nav }) => {
           ""
         ) : (
           <img
-            src="../src/assets/Images/mypic.jpg"
+            src="/mypic.jpg"
             alt="my image"
             className="w-full h-full rounded-3xl bg-cover scale-150 max-md:h-4/6 max-sm:h-3/6"
           />
