@@ -1,6 +1,7 @@
 import React from "react";
 
 const Home = ({ nav }) => {
+  const resume = "../public/docs/Abhishek_Tyagi_Resume.doc";
   return (
     <div
       id="home"
@@ -10,6 +11,11 @@ const Home = ({ nav }) => {
         <h3 className="text-4xl max-md:text-2xl">
           Hello there!{" "}
           {nav ? "" : <span className="wave inline-block">👋</span>}
+          <a href={resume} download>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-lg ml-96 max-sm:text-xs max-sm:p-1 max-sm:font-light max-sm:w-32 max-sm:ml-32 max-sm:top-44 max-sm:absolute">
+              Download Resume
+            </button>
+          </a>
         </h3>
         <h1 className="text-5xl mb-11 max-md:text-2xl max-sm:text-xl">
           I'm{" "}
@@ -32,6 +38,7 @@ const Home = ({ nav }) => {
           impactful projects.
         </p>
       </div>
+
       <div className="p-1 mr-32 flex justify-start -mt-32 max-md:justify-center max-md:mr-0 max-sm:mt-20">
         {nav ? (
           ""
