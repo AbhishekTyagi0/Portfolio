@@ -58,7 +58,7 @@ const Projects = () => {
       id="projects"
       className="h-full w-dwh bg-gradient-to-b from-slate-950 to-slate-800 flex flex-col items-center"
     >
-      <h1 className="text-white text-4xl font-bold mb-8 max-md:mb-16">
+      <h1 className="text-white text-3xl font-bold mb-8 max-md:mb-8 mt-4">
         Frontend <span className="text-red-400">Projects</span>
       </h1>
       {projectList.map(({ id, subject, src, about, code, live }) => (

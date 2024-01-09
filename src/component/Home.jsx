@@ -7,7 +7,7 @@ const Home = ({ nav }) => {
   return (
     <div
       id="home"
-      className="h-dvh w-full bg-slate-950 bg-gradient-to-b from-slate-900 to-slate-950  text-white flex justify-between items-center max-md:flex-col"
+      className="h-dvh  w-full bg-slate-950 bg-gradient-to-b from-slate-900 to-slate-950  text-white flex justify-between items-center max-md:flex-col"
     >
       <div className="flex flex-col p-20 gap-3 -mt-32 max-md:mt-0 max-md:p-32 max-sm:p-12">
         <h3 className="text-4xl max-md:text-2xl">
@@ -74,7 +74,7 @@ const Home = ({ nav }) => {
         </ul>
       </div>
 
-      <div className="p-1 mr-32 flex justify-start -mt-32 max-md:justify-center max-md:mr-0 max-sm:mt-20">
+      <div className="p-1 mr-32 flex justify-start -mt-32 max-md:justify-center max-md:mr-0 max-sm:mt-6 max-sm:mb-2">
         {nav ? (
           ""
         ) : (
