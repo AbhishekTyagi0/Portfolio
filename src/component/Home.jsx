@@ -23,7 +23,7 @@ const Home = () => {
       </div>
       <div className="p-1 mr-32 flex justify-start -mt-32">
         <img
-          src="../src/assets/mypic.jpg"
+          src="../src/assets/Images/mypic.jpg"
           alt="my image"
           className="w-full h-full rounded-3xl bg-cover scale-150"
         />

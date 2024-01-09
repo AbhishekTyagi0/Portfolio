@@ -1,4 +1,5 @@
 import "./App.css";
+import Contact from "./component/Contact";
 import Home from "./component/Home";
 import Navigation from "./component/Navigation";
 import Projects from "./component/Project";
@@ -11,6 +12,7 @@ function App() {
       <Home />
       <Skills />
       <Projects />
+      <Contact />
     </>
   );
 }

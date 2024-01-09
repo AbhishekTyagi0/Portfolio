@@ -91,7 +91,7 @@ const Projects = () => {
           </div>
         </div>
       ))}
-      <div className="mt-16 flex justify-center text-3xl text-white font-bold">
+      <div className="mt-8 flex justify-start pl-16 w-full text-3xl text-white font-bold">
         FullStack Projects:
         <span className="text-red-400 pl-4"> Comming Soon . . .</span>
       </div>
