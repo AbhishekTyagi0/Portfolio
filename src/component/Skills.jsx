@@ -39,15 +39,15 @@ const Skills = () => {
       <h1 className="text-white text-6xl font-bold -mt-16 max-md:text-4xl max-md:mt-16">
         Professional <span className="text-red-400">Skillset</span>
       </h1>
-      <div className="bg-grey-700 -mr-20 w-11/12 gap-12 grid grid-cols-4 p-12 max-md:mt-20 max-md:p-3 max-sm:mr-0 max-sm:mt-12">
+      <div className="bg-grey-700 -mr-20 w-11/12 gap-12 grid grid-cols-4 p-12 max-md:mt-20 max-md:p-3 max-sm:mr-2 max-sm:mt-12">
         {list.map(({ id, icon, name }) => (
           <ul
             key={id}
-            className=" rounded-2xl h-44 w-56 flex border border-red-400  shadow-md shadow-red-300 hover:shadow-md hover:shadow-red-400 hover:scale-105 duration-300 ease-in-out max-md:h-32 max-md:w-44 max-sm:w-28"
+            className=" rounded-2xl h-44 w-56 flex border border-red-400  shadow-md shadow-red-300 hover:shadow-md hover:shadow-red-400 hover:scale-105 duration-300 ease-in-out max-md:h-32 max-md:w-44 max-sm:w-24"
           >
-            <li className="font-semibold max-md:text-4xl text-white text-6xl flex gap-1 justify-center flex-col items-center h-full w-full">
+            <li className="font-semibold max-md:text-4xl text-white text-6xl flex gap-1 justify-center flex-col items-center h-full w-full  max-sm:text-3xl">
               {icon}
-              <p className="text-white text-3xl mt-4 max-md:text-2xl max-sm:text-lg">
+              <p className="text-white text-3xl mt-4 max-md:text-2xl max-sm:text-sm">
                 {name}
               </p>
             </li>
@@ -62,11 +62,11 @@ const Skills = () => {
           {tools.map(({ id, icon, name }) => (
             <ul
               key={id}
-              className=" rounded-2xl h-44 w-56 flex border border-red-400 border-red-400  shadow-md shadow-red-300 hover:shadow-md hover:shadow-red-400 hover:scale-105 duration-300 max-md:h-32 max-md:w-44 max-md:mt-8 ease-in-out max-sm:w-28"
+              className=" rounded-2xl h-44 w-56 flex border border-red-400 border-red-400  shadow-md shadow-red-300 hover:shadow-md hover:shadow-red-400 hover:scale-105 duration-300 max-md:h-32 max-md:w-44 max-md:mt-8 ease-in-out max-sm:w-24"
             >
-              <li className="text-white max-md:text-4xl text-6xl font-semibold flex gap-1 justify-center flex-col items-center h-full w-full">
+              <li className="text-white max-md:text-4xl text-6xl font-semibold flex gap-1 justify-center flex-col items-center h-full w-full  max-sm:text-3xl">
                 {icon}
-                <p className="text-white max-md:text-2xl text-3xl mt-4 max-sm:text-lg">
+                <p className="text-white max-md:text-2xl text-3xl mt-4 max-sm:text-sm">
                   {name}
                 </p>
               </li>

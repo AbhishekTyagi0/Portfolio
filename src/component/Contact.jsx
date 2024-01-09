@@ -27,7 +27,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="flex flex-col relative items-center w-full h-dvh bg-gradient-to-t from-slate-900 to-slate-800"
+      className="flex flex-col relative items-center w-full h-full bg-gradient-to-t from-slate-900 to-slate-800"
     >
       <h1 className="text-white text-5xl font-bold max-sm:text-xl">
         Contact<span className="text-red-400"> ME!</span>
@@ -89,7 +89,7 @@ const Contact = () => {
           />
         </form>
       </div>
-      <footer className="bg-gradient-to-r absolute from-cyan-800 to-blue-900 w-full flex justify-evenly items-center h-24 bottom-0">
+      <footer className="bg-gradient-to-r absolute from-cyan-800 to-blue-900 w-full flex justify-evenly items-center h-24 -bottom-24">
         <h2 className="text-white font-bold text-xl max-sm:text-sm">
           Designed and Developed with ❤️ by
           <span className="text-red-400 font-bold text-xl ml-2 max-sm:text-sm">

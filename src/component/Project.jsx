@@ -56,7 +56,7 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="h-dvh w-dwh bg-gradient-to-b from-slate-950 to-slate-800 flex flex-col items-center"
+      className="h-full w-dwh bg-gradient-to-b from-slate-950 to-slate-800 flex flex-col items-center"
     >
       <h1 className="text-white text-4xl font-bold mb-8 max-md:mb-16">
         Frontend <span className="text-red-400">Projects</span>
@@ -75,7 +75,7 @@ const Projects = () => {
               />
             </a>
           </div>
-          <div className=" w-7/12 h-full p-2 max-md:p-4 max-md:w-8/12">
+          <div className=" w-9/12 h-full p-2 max-md:p-4 max-md:w-8/12">
             <h2 className="text-white font-bold text-2xl mb-2 max-md:text-xl max-sm:text-sm">
               {subject}
             </h2>
@@ -88,21 +88,21 @@ const Projects = () => {
                 {about}
               </p>
             ))}
-          </div>
-          <div className="text-white font-bold flex justify-evenly h-full w-2/12 flex-col gap-8">
-            <a href={code} className="hover:text-red-400 max-md:text-xs">
-              Click me to Check CODE
-            </a>
-            <a
-              href={live}
-              className="hover:text-red-400 text-lg max-md:text-xs"
-            >
-              Go to website
-            </a>
+            <div className="text-white font-bold flex justify-start h-full w-full gap-16 mt-2 max-sm:gap-4">
+              <a href={code} className="hover:text-red-400 max-md:text-xs">
+                Click me to Check CODE
+              </a>
+              <a
+                href={live}
+                className="hover:text-red-400 text-lg max-md:text-xs"
+              >
+                Go to website
+              </a>
+            </div>
           </div>
         </div>
       ))}
-      <div className="mt-8 flex justify-start pl-16 w-full text-3xl text-white font-bold max-md:mt-24 max-sm:text-xl">
+      <div className="mt-8 flex justify-start pl-16 w-full text-3xl text-white font-bold max-md:mt-8 max-sm:text-lg max-md:mb-8">
         FullStack Projects:
         <span className="text-red-400 pl-4"> Comming Soon . . .</span>
       </div>
