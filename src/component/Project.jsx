@@ -11,7 +11,7 @@ const projectList = [
     subject: "CV Builder",
     src: cv_builder,
     about: [
-      "Built a user-friendly web app for effortless CV creation, empowering individuals to craft professional and visually appealing resume.",
+      "Built a user-friendly web app for effortless CV creation, empowering individuals to craft professional and visually appealing resumes.",
       "Leveraged Hooks, component-based architecture, JSX, and props to enhance development efficiency and maintainability.",
     ],
     code: "https://github.com/AbhishekTyagi0/CV-Builder",
@@ -33,8 +33,8 @@ const projectList = [
     subject: "Shopping Cart",
     src: shoppingo,
     about: [
-      "Crafted interactive shopping cart in ReactJS, showcasing front-end expertise and proficient React library usage.",
-      "Seamlessly navigated user journey through React Router, enhancing engagement and simplifying online purchases with CRUD operations. ",
+      "Crafted an interactive shopping cart in ReactJS, showcasing front-end expertise and proficient React library usage.",
+      "Seamlessly navigated user journey through React Router, enhancing engagement and simplifying online purchases with CRUD operations.",
     ],
     code: "https://github.com/AbhishekTyagi0/React-shopping-cart",
     live: "https://react-shoppingo.netlify.app/",
@@ -44,11 +44,11 @@ const projectList = [
     subject: "Portfolio",
     src: portfolio,
     about: [
-      "created my portfolio website using ReactJs, Tailwind CSS.",
-      "It showcases all my current skilled acquired as an frontend developer and some recent projects crafted using reactjs.",
+      "Created my portfolio website using ReactJs, Tailwind CSS.",
+      "It showcases all my current skills acquired as a frontend developer and some recent projects crafted using ReactJS.",
     ],
     code: "https://github.com/AbhishekTyagi0/Portfolio",
-    live: "you are already here",
+    live: "https://abhishek-tyagi-portfolio.vercel.app/",
   },
 ];
 
@@ -56,45 +56,51 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="h-full w-dwh bg-gradient-to-b from-slate-950 to-slate-800 flex flex-col items-center"
+      className="h-full w-full bg-gradient-to-b from-slate-950 to-slate-800 flex flex-col items-center p-4"
     >
-      <h1 className="text-white text-3xl font-bold mb-8 max-md:mb-8 mt-4">
+      <h1 className="text-white text-4xl md:text-5xl font-bold mt-4 mb-8 max-md:mb-8">
         Frontend <span className="text-red-400">Projects</span>
       </h1>
+
       {projectList.map(({ id, subject, src, about, code, live }) => (
         <div
           key={id}
-          className="border border-red-200 flex justify-between m-3 items-center p-1 w-11/12"
+          className="border border-red-200 flex flex-col md:flex-row justify-between m-3 items-center p-1 w-full max-md:w-11/12"
         >
           <div className="flex-none">
-            <a href={live} target="_blank">
+            <a href={live} target="_blank" rel="noopener noreferrer">
               <img
                 src={src}
-                alt="project-image"
-                className="w-64 hover:scale-105 transition-all duration-300 ease-in-out max-md:w-48 max-sm:w-32"
+                alt={`${subject} project`}
+                className="w-full md:w-64 hover:scale-105 transition-all duration-300 ease-in-out"
               />
             </a>
           </div>
-          <div className=" w-9/12 h-full p-2 max-md:p-4 max-md:w-8/12">
-            <h2 className="text-white font-bold text-2xl mb-2 max-md:text-xl max-sm:text-sm">
+
+          <div className="w-full md:w-9/12 h-full p-2 md:p-4">
+            <h2 className="text-white font-bold text-2xl mb-2 md:text-4xl max-md:text-xl max-sm:text-sm">
               {subject}
             </h2>
-            {about.map((about, index) => (
+
+            {about.map((aboutText, index) => (
               <p
                 key={index}
-                className="text-zinc-400 flex items-center -ml-6 max-md:text-sm max-sm:text-xs"
+                className="text-zinc-400 flex items-center mt-2 max-md:text-sm max-sm:text-xs"
               >
                 <TbPoint className="pr-2 font-bold text-2xl max-md:pr-1 max-md:text-sm" />
-                {about}
+                {aboutText}
               </p>
             ))}
-            <div className="text-white font-bold flex justify-start h-full w-full gap-16 mt-2 max-sm:gap-4">
-              <a href={code} className="hover:text-red-400 max-md:text-xs">
+
+            <div className="text-white font-bold flex flex-col md:flex-row mt-2 gap-4 max-md:text-sm">
+              <a href={code} className="hover:text-red-400">
                 Click me to Check CODE
               </a>
               <a
                 href={live}
-                className="hover:text-red-400 text-lg max-md:text-xs"
+                className="hover:text-red-400 mt-2 md:mt-0"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Go to website
               </a>
@@ -102,9 +108,10 @@ const Projects = () => {
           </div>
         </div>
       ))}
-      <div className="mt-8 flex justify-start pl-16 w-full text-3xl text-white font-bold max-md:mt-8 max-sm:text-lg max-md:mb-8">
+
+      <div className="mt-8 flex justify-start w-full text-3xl text-white font-bold max-md:mt-8 max-sm:text-lg max-md:mb-8">
         FullStack Projects:
-        <span className="text-red-400 pl-4"> Comming Soon . . .</span>
+        <span className="text-red-400 pl-4"> Coming Soon . . .</span>
       </div>
     </div>
   );
