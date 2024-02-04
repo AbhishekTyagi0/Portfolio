@@ -109,10 +109,10 @@ const Projects = () => {
         </div>
       ))}
 
-      <div className="mt-8 flex justify-start w-full text-3xl text-white font-bold max-md:mt-8 max-sm:text-lg max-md:mb-8">
+      {/* <div className="mt-8 flex justify-start w-full text-3xl text-white font-bold max-md:mt-8 max-sm:text-lg max-md:mb-8">
         FullStack Projects:
         <span className="text-red-400 pl-4"> Coming Soon . . .</span>
-      </div>
+      </div> */}
     </div>
   );
 };
