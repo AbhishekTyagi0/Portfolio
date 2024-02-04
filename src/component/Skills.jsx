@@ -4,21 +4,26 @@ import { IoLogoHtml5 } from "react-icons/io5";
 import { FaGitAlt, FaGithub, FaReact } from "react-icons/fa";
 import {
   SiCss3,
+  SiJirasoftware,
   SiNetlify,
   SiNpm,
+  SiReduxsaga,
   SiTailwindcss,
+  SiTypescript,
   SiVisualstudiocode,
 } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
 import { GrMysql } from "react-icons/gr";
 
 const list = [
+  { id: 10, icon: <SiTypescript />, name: "TypeScript" },
   { id: 1, icon: <TbBrandRedux />, name: "Redux" },
-  { id: 2, icon: <IoLogoHtml5 />, name: "HTML" },
+  { id: 9, icon: <SiReduxsaga />, name: "Redux Saga" },
   { id: 3, icon: <FaReact />, name: "React" },
   { id: 4, icon: <IoLogoJavascript />, name: "JavaScript" },
   { id: 5, icon: <SiCss3 />, name: "CSS" },
   { id: 6, icon: <SiTailwindcss />, name: "Tailwind CSS" },
+  { id: 2, icon: <IoLogoHtml5 />, name: "HTML" },
   { id: 7, icon: <GrMysql />, name: "MySQl" },
   { id: 8, icon: <FaGitAlt />, name: "Git" },
 ];
@@ -28,6 +33,7 @@ const tools = [
   { id: 2, icon: <SiNpm />, name: "NPM" },
   { id: 3, icon: <SiVisualstudiocode />, name: "Visual Studio" },
   { id: 4, icon: <SiNetlify />, name: "Netlify" },
+  { id: 5, icon: <SiJirasoftware />, name: "Jira" },
 ];
 
 const Skills = () => {
@@ -40,7 +46,7 @@ const Skills = () => {
         Professional <span className="text-red-400">Skillset</span>
       </h1>
 
-      <div className="bg-grey-700 w-full md:-mr-20 gap-4 md:w-11/12 grid grid-cols-1 md:grid-cols-4 p-6 md:p-12 mt-4 md:mt-20">
+      <div className="bg-grey-700 w-full gap-4 md:gap-8 md:w-11/12 grid grid-cols-2 md:grid-cols-5 p-6 md:p-12 mt-4 md:mt-12">
         {list.map(({ id, icon, name }) => (
           <div
             key={id}
@@ -61,7 +67,7 @@ const Skills = () => {
           <span className="text-red-400 pr-3">Tools </span> I use
         </div>
 
-        <div className="bg-grey-700 w-full md:-mr-24 gap-4 md:w-11/12 grid grid-cols-1 md:grid-cols-4 p-6 md:p-12 mt-4 md:mt-16">
+        <div className="bg-grey-700 w-full gap-4 md:gap-8 md:w-11/12 grid grid-cols-2 md:grid-cols-5 p-6 md:p-12 mt-4 md:mt-10">
           {tools.map(({ id, icon, name }) => (
             <div
               key={id}

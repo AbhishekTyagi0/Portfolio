@@ -9,7 +9,7 @@ const Home = ({ nav }) => {
       id="home"
       className="h-auto md:pt-60 w-full bg-slate-950 bg-gradient-to-b from-slate-900 to-slate-950  text-white flex justify-between items-center max-md:flex-col"
     >
-      <div className="flex flex-col p-20 gap-3 -mt-32 max-md:mt-0 max-md:p-32 max-sm:p-12">
+      <div className="flex flex-col p-20 gap-3 -mt-32 max-md:mt-0 max-md:p-32 max-sm:p-10">
         <h3 className="text-4xl max-md:text-2xl">
           Hello there!{" "}
           {nav ? "" : <span className="wave inline-block">👋</span>}
@@ -17,8 +17,8 @@ const Home = ({ nav }) => {
             ""
           ) : (
             <a href={resume} download>
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-lg ml-96 max-sm:text-xs max-sm:p-1 max-sm:px-3 max-sm:font-light max-sm:w-32 max-sm:ml-12 max-sm:top-44 max-sm:absolute">
-                Download Resume
+              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 md:px-3 rounded text-xs md:text-lg ml-96 w-32 md:w-52 max-sm:ml-12 max-sm:absolute top-30">
+                Download My Resume
               </button>
             </a>
           )}
@@ -35,7 +35,7 @@ const Home = ({ nav }) => {
             Frontend Developer
           </span>
         </h2>
-        <p className="w-11/12 text-lg max-md:text-sm">
+        <p className="w-full text-lg max-md:text-sm">
           Passionate frontend developer with a knack for crafting user-centric
           interfaces. Proficient in ReactJS and responsive web development, I'm
           eager to leverage my skills and build seamless, visually compelling
