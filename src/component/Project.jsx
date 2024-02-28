@@ -4,6 +4,7 @@ import memory_game from "../assets/Images/memory-game.png";
 import shoppingo from "../assets/Images/shoppingo.png";
 import portfolio from "../assets/Images/portfolio.png";
 import { TbPoint } from "react-icons/tb";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const projectList = [
   {
@@ -92,17 +93,17 @@ const Projects = () => {
               </p>
             ))}
 
-            <div className="text-white font-bold flex flex-col md:flex-row mt-2 gap-4 max-md:text-sm">
-              <a href={code} className="hover:text-red-400">
-                Click me to Check CODE
+            <div className="text-white font-bold flex flex-col md:flex-row mt-2 gap-4 max-md:text-sm text-2xl">
+              <a href={code} className="hover:scale-125" target="_blank">
+                <FaGithub />
               </a>
               <a
                 href={live}
-                className="hover:text-red-400 mt-2 md:mt-0"
+                className="hover:scale-125 mt-2 md:mt-0 text-2xl"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Go to website
+                <FaExternalLinkAlt />
               </a>
             </div>
           </div>

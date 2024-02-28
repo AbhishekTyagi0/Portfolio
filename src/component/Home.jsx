@@ -3,7 +3,7 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const Home = ({ nav }) => {
-  const resume = "/docs/Abhishek_Tyagi_Resume.doc";
+  const resume = "/docs/Resume_Abhishek_Tyagi_Frontend_Developer.pdf";
   return (
     <div
       id="home"
