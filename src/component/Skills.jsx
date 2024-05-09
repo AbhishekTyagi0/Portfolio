@@ -3,13 +3,19 @@ import { TbBrandRedux } from "react-icons/tb";
 import { IoLogoHtml5 } from "react-icons/io5";
 import { FaGitAlt, FaGithub, FaReact } from "react-icons/fa";
 import {
+  SiApifox,
   SiCss3,
+  SiDiscord,
+  SiFigma,
   SiJirasoftware,
   SiNetlify,
+  SiNextdotjs,
   SiNpm,
+  SiPostman,
   SiReduxsaga,
   SiTailwindcss,
   SiTypescript,
+  SiVercel,
   SiVisualstudiocode,
 } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
@@ -17,6 +23,7 @@ import { GrMysql } from "react-icons/gr";
 
 const list = [
   { id: 10, icon: <SiTypescript />, name: "TypeScript" },
+  { id: 11, icon: <SiNextdotjs />, name: "NextJS" },
   { id: 1, icon: <TbBrandRedux />, name: "Redux" },
   { id: 9, icon: <SiReduxsaga />, name: "Redux Saga" },
   { id: 3, icon: <FaReact />, name: "React" },
@@ -26,6 +33,7 @@ const list = [
   { id: 2, icon: <IoLogoHtml5 />, name: "HTML" },
   { id: 7, icon: <GrMysql />, name: "MySQl" },
   { id: 8, icon: <FaGitAlt />, name: "Git" },
+  { id: 12, icon: <SiApifox />, name: "API" },
 ];
 
 const tools = [
@@ -34,6 +42,10 @@ const tools = [
   { id: 3, icon: <SiVisualstudiocode />, name: "Visual Studio" },
   { id: 4, icon: <SiNetlify />, name: "Netlify" },
   { id: 5, icon: <SiJirasoftware />, name: "Jira" },
+  { id: 6, icon: <SiFigma />, name: "Figma" },
+  { id: 7, icon: <SiPostman />, name: "Postman" },
+  { id: 8, icon: <SiVercel />, name: "Vercel" },
+  { id: 9, icon: <SiDiscord />, name: "Discord" },
 ];
 
 const Skills = () => {
@@ -46,7 +58,7 @@ const Skills = () => {
         Professional <span className="text-red-400">Skillset</span>
       </h1>
 
-      <div className="bg-grey-700 w-full gap-4 md:gap-8 md:w-11/12 grid grid-cols-2 md:grid-cols-5 p-6 md:p-12 mt-4 md:mt-12">
+      <div className="bg-grey-700 w-full gap-4 md:gap-8 md:w-11/12 grid grid-cols-2 md:grid-cols-4 p-6 md:p-12 mt-4 md:mt-12">
         {list.map(({ id, icon, name }) => (
           <div
             key={id}
