@@ -18,7 +18,7 @@ const links = [
 
 const Navigation = ({ nav, setNav }) => {
   return (
-    <div className="bg-slate-900 h-20 font-mono flex justify-between items-center">
+    <div className="bg-slate-900 h-20 font-mono flex justify-between items-center w-full fixed z-10">
       <div className="text-white ml-5 px-5 text-6xl hover:cursor-pointer hover:text-red-400">
         <FontAwesomeIcon icon={faAtlassian} />.
       </div>
@@ -49,7 +49,7 @@ const Navigation = ({ nav, setNav }) => {
       {nav && (
         <ul
           onClick={() => setNav(!nav)}
-          className="flex h-dvh flex-col items-center justify-start pt-32 absolute top-24 left-0 w-full bg-black text-left"
+          className="flex h-dvh flex-col items-center justify-start pt-32 absolute top-0 left-0 w-full bg-black text-left"
         >
           {links.map(({ id, link, icon, section }) => (
             <li

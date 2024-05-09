@@ -3,7 +3,7 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const Home = ({ nav }) => {
-  const resume = "/docs/Resume_Abhishek_Tyagi_Frontend_Developer.pdf";
+  const resume = "/docs/Resume_Abhishek_Tyagi.pdf";
   return (
     <div
       id="home"
@@ -37,11 +37,19 @@ const Home = ({ nav }) => {
         </h2>
         <p className="w-full text-lg max-md:text-sm">
           Passionate frontend developer with a knack for crafting user-centric
-          interfaces. Proficient in ReactJS and responsive web development, I'm
-          eager to leverage my skills and build seamless, visually compelling
-          experiences. From dynamic shopping carts to interactive memory games,
-          my GitHub portfolio showcases my dedication to delivering engaging and
-          impactful projects.
+          interfaces. Proficient in{" "}
+          <span className="font-semibold text-red-300">
+            Typescript,ReactJS, NextJS
+          </span>{" "}
+          and{" "}
+          <span className="font-semibold text-red-300">
+            responsive web development
+          </span>
+          , I'm eager to leverage my skills and build seamless, visually
+          compelling experiences. From dynamic websites clones and shopping
+          carts to interactive memory games, my{" "}
+          <span className="font-semibold text-red-300">GitHub</span> portfolio
+          showcases my dedication to delivering engaging and impactful projects.
         </p>
         <ul className="flex gap-8 lg:text-4xl mt-3 items-center">
           <p className="text-red-400 lg:font-semibold">Find Me On:</p>
