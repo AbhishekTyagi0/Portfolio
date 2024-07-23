@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { TbBrandRedux } from "react-icons/tb";
 import { IoLogoHtml5 } from "react-icons/io5";
-import { FaGitAlt, FaGithub, FaReact } from "react-icons/fa";
+import { FaAws, FaGitAlt, FaGithub, FaReact } from "react-icons/fa";
 import {
   SiApifox,
   SiCss3,
@@ -46,54 +48,152 @@ const tools = [
   { id: 7, icon: <SiPostman />, name: "Postman" },
   { id: 8, icon: <SiVercel />, name: "Vercel" },
   { id: 9, icon: <SiDiscord />, name: "Discord" },
+  { id: 10, icon: <FaAws />, name: "AWS S3" },
 ];
+
+const SkillCard = ({ icon, name, index }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={{
+        visible: {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          transition: { duration: 0.5, delay: index * 0.1 },
+        },
+        hidden: { opacity: 0, y: 50, scale: 0.8 },
+      }}
+      whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+      whileTap={{ scale: 0.95 }}
+      className="bg-slate-800 rounded-xl p-6 flex flex-col items-center justify-center gap-4 hover:bg-slate-700 transition-colors duration-300 transform"
+    >
+      <motion.div
+        className="text-5xl text-red-400"
+        initial={{ scale: 0, rotate: -180 }}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+          delay: index * 0.1 + 0.2,
+        }}
+      >
+        {icon}
+      </motion.div>
+      <motion.p
+        className="text-white text-lg font-medium text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: index * 0.1 + 0.4 }}
+      >
+        {name}
+      </motion.p>
+    </motion.div>
+  );
+};
+
+const SectionTitle = ({ children }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.h2
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={{
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+        hidden: { opacity: 0, y: -50 },
+      }}
+      className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-16"
+    >
+      {children}
+    </motion.h2>
+  );
+};
 
 const Skills = () => {
   return (
     <div
       id="skills"
-      className="h-full bg-slate-950 flex items-center w-full flex-col"
+      className="min-h-screen bg-slate-900 py-16 px-4 sm:px-6 lg:px-8"
     >
-      <h1 className="text-white text-4xl md:text-6xl font-bold mt-4 md:mt-16">
-        Professional <span className="text-red-400">Skillset</span>
-      </h1>
+      <div className="max-w-7xl mx-auto text-white">
+        <SectionTitle>
+          Professional <span className="text-red-400">Skillset</span>
+        </SectionTitle>
 
-      <div className="bg-grey-700 w-full gap-4 md:gap-8 md:w-11/12 grid grid-cols-2 md:grid-cols-4 p-6 md:p-12 mt-4 md:mt-12">
-        {list.map(({ id, icon, name }) => (
-          <div
-            key={id}
-            className="rounded-2xl h-32 md:h-44 flex border border-red-400 shadow-md hover:shadow-red-400 hover:scale-105 duration-300 ease-in-out"
-          >
-            <div className="flex flex-col items-center justify-center w-full">
-              <div className="text-white text-2xl md:text-4xl font-semibold flex gap-1 items-center">
-                {icon}
-                <p className="text-white text-xl md:text-3xl mt-2">{name}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="bg-slate-950 flex items-center w-full flex-col mt-4">
-        <div className="text-white text-4xl md:text-5xl font-semibold flex justify-center mt-8 items-center">
-          <span className="text-red-400 pr-3">Tools </span> I use
-        </div>
-
-        <div className="bg-grey-700 w-full gap-4 md:gap-8 md:w-11/12 grid grid-cols-2 md:grid-cols-5 p-6 md:p-12 mt-4 md:mt-10">
-          {tools.map(({ id, icon, name }) => (
-            <div
-              key={id}
-              className="rounded-2xl h-32 md:h-44 flex border border-red-400 shadow-md hover:shadow-red-400 hover:scale-105 duration-300 ease-in-out"
-            >
-              <div className="flex flex-col items-center justify-center w-full">
-                <div className="text-white text-2xl md:text-4xl font-semibold flex gap-1 items-center">
-                  {icon}
-                  <p className="text-white text-xl md:text-3xl mt-2">{name}</p>
-                </div>
-              </div>
-            </div>
+        <motion.div
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mb-16"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: { transition: { staggerChildren: 0.1 } },
+            hidden: {},
+          }}
+        >
+          {list.map((skill, index) => (
+            <SkillCard
+              key={skill.id}
+              icon={skill.icon}
+              name={skill.name}
+              index={index}
+            />
           ))}
-        </div>
+        </motion.div>
+
+        <SectionTitle>
+          <span className="text-red-400">Tools</span> I Use
+        </SectionTitle>
+
+        <motion.div
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: {
+              transition: { staggerChildren: 0.1, delayChildren: 0.3 },
+            },
+            hidden: {},
+          }}
+        >
+          {tools.map((tool, index) => (
+            <SkillCard
+              key={tool.id}
+              icon={tool.icon}
+              name={tool.name}
+              index={index}
+            />
+          ))}
+        </motion.div>
       </div>
     </div>
   );

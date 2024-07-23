@@ -1,98 +1,112 @@
 import React from "react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const Home = ({ nav }) => {
-  const resume = "/docs/Resume_Abhishek_Tyagi.pdf";
+  const resume = "/docs/Abhishek-Tyagi-Resume.pdf";
+
   return (
     <div
       id="home"
-      className="h-auto md:pt-60 w-full bg-slate-950 bg-gradient-to-b from-slate-900 to-slate-950  text-white flex justify-between items-center max-md:flex-col"
+      className="min-h-screen w-full max-md:pt-32 bg-gradient-to-b from-slate-900 to-slate-950 text-white flex justify-between items-center px-8 py-16 max-md:flex-col"
     >
-      <div className="flex flex-col p-20 gap-3 -mt-32 max-md:mt-0 max-md:p-32 max-sm:p-10">
-        <h3 className="text-4xl max-md:text-2xl">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex flex-col gap-6 max-w-2xl"
+      >
+        <h3 className="text-4xl max-md:text-2xl flex items-center gap-4">
           Hello there!{" "}
-          {nav ? "" : <span className="wave inline-block">👋</span>}
-          {nav ? (
-            ""
-          ) : (
-            <a href={resume} download>
-              <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 md:px-3 rounded text-xs md:text-lg ml-96 w-32 md:w-52 max-sm:ml-12 max-sm:absolute top-30">
-                Download My Resume
-              </button>
-            </a>
-          )}
+          {!nav && <span className="wave inline-block animate-wave">👋</span>}
         </h3>
-        <h1 className="text-5xl mb-11 max-md:text-2xl max-sm:text-xl">
-          I'm{" "}
-          <span className="text-red-400 font-bold max-md:text-2xl max-sm:text-xl">
-            Abhishek Tyagi
-          </span>
+        <h1 className="text-5xl mb-6 max-md:text-4xl">
+          I'm <span className="text-red-400 font-bold">Abhishek Tyagi</span>
         </h1>
-        <h2 className="text-6xl w-10/12 max-md:text-3xl max-md:w-8/12 max-sm:text-xl">
+        <h2 className="text-4xl max-md:text-3xl">
           I'm a{" "}
-          <span className="text-red-400 font-bold md:text-5xl text-lg">
-            Frontend Developer
+          <span className="text-red-400 font-bold">
+            NextJs & ReactJs Developer
           </span>
         </h2>
-        <p className="w-full text-lg max-md:text-sm">
-          Passionate frontend developer with a knack for crafting user-centric
-          interfaces. Proficient in{" "}
-          <span className="font-semibold text-red-300">
-            Typescript,ReactJS, NextJS
-          </span>{" "}
-          and{" "}
-          <span className="font-semibold text-red-300">
-            responsive web development
-          </span>
-          , I'm eager to leverage my skills and build seamless, visually
-          compelling experiences. From dynamic websites clones and shopping
-          carts to interactive memory games, my{" "}
-          <span className="font-semibold text-red-300">GitHub</span> portfolio
-          showcases my dedication to delivering engaging and impactful projects.
+        <p className="text-lg max-md:text-base">
+          Dynamic Next.js and React.js Developer with a strong foundation in
+          building responsive and scalable web applications. Proficient in
+          modern web technologies, including TypeScript, Tailwind CSS, and
+          MongoDB. Experienced in integrating third-party services and enhancing
+          user experience.
         </p>
-        <ul className="flex gap-8 lg:text-4xl mt-3 items-center">
-          <p className="text-red-400 lg:font-semibold">Find Me On:</p>
-          <li className="hover:scale-125 transition-all duration-300 ease-out">
-            <a href="https://github.com/AbhishekTyagi0" target="_blank">
-              <FaGithub />
-            </a>
+        <div className="flex gap-4 mt-6">
+          <a
+            href={resume}
+            download
+            className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-2 md:px-6 rounded-full text-sm md:text-lg transition-colors duration-300"
+          >
+            Download Resume
+          </a>
+          <a
+            href="https://shricode.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-600 hover:bg-green-700 text-white py-2 px-2 md:px-6 rounded-full text-sm md:text-lg transition-colors duration-300"
+          >
+            Check Out My Blog
+          </a>
+        </div>
+        <ul className="flex gap-6 mt-8 text-3xl">
+          <li className="text-red-400 font-semibold text-xl self-center">
+            Find Me On:
           </li>
-          <li className="hover:scale-125 transition-all duration-300 ease-out">
-            <a
-              href="https://www.linkedin.com/in/abhishek-tyagi007/"
-              target="_blank"
+          {[
+            { icon: <FaGithub />, url: "https://github.com/AbhishekTyagi0" },
+            {
+              icon: <FaLinkedin />,
+              url: "https://www.linkedin.com/in/abhishek-tyagi007/",
+            },
+            { icon: <FaXTwitter />, url: "https://twitter.com/abhishek43100" },
+            {
+              icon: <FaInstagram />,
+              url: "https://www.instagram.com/i_abhishek_tyagi/",
+            },
+          ].map((social, index) => (
+            <motion.li
+              key={index}
+              whileHover={{ scale: 1.2 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <FaLinkedin />
-            </a>
-          </li>
-          <li className="hover:scale-125 transition-all duration-300 ease-out">
-            <a href="https://twitter.com/abhishek43100" target="_blank">
-              <FaXTwitter />
-            </a>
-          </li>
-          <li className="hover:scale-125 transition-all duration-300 ease-out">
-            <a
-              href="https://www.instagram.com/i_abhishek_tyagi/"
-              target="_blank"
-            >
-              <FaInstagram />
-            </a>
-          </li>
+              <a
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-red-400 transition-colors duration-300"
+              >
+                {social.icon}
+              </a>
+            </motion.li>
+          ))}
         </ul>
-      </div>
+      </motion.div>
 
-      <div className="p-1 mr-32 flex justify-start -mt-32 max-md:justify-center max-md:mr-0 max-sm:mt-2 max-sm:mb-2">
-        {nav ? (
-          ""
-        ) : (
-          <img
-            src="/mypic.jpg"
-            alt="my image"
-            className="w-5/6 mb-3 md:mb-0 h-auto rounded-3xl bg-cover md:w-full md:scale-150 md:h-auto"
-          />
-        )}
-      </div>
+      {!nav && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="relative"
+        >
+          <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-red-400 shadow-lg shadow-red-400/50">
+            <img
+              src="/mypic.jpg"
+              alt="Abhishek Tyagi"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="absolute -bottom-4 -right-4 bg-slate-800 px-6 py-2 rounded-full shadow-md">
+            <span className="text-red-400 font-bold">Web Developer</span>
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 };

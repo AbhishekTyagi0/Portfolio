@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
@@ -6,7 +7,6 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         "service_3e3k0d7",
@@ -17,79 +17,118 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
+          // TODO: Add success notification
+          form.current.reset();
         },
         (error) => {
           console.log(error.text);
+          // TODO: Add error notification
         }
       );
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
-    <div
+    <motion.div
       id="contact"
-      className="pt-20 flex flex-col relative items-center w-full h-full bg-gradient-to-t from-slate-900 to-slate-800 max-sm:pt-2"
+      className="pt-20 flex flex-col relative items-center w-full h-auto bg-gradient-to-t from-slate-900 to-slate-800 max-sm:pt-2"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
     >
-      <h1 className="text-white text-5xl font-bold max-sm:text-xl">
-        Contact<span className="text-red-400"> ME!</span>
-      </h1>
-      <div className="mt-12 w-10/12 h-4/6 flex justify-between max-md:flex-col max-md:mt-4">
-        <div className="border-r border-red-200 flex-1 text-white p-20 font-bold max-md:border-none max-md:p-12 max-sm:p-4">
+      <motion.h1
+        className="text-white text-5xl font-bold max-sm:text-xl mb-12"
+        variants={itemVariants}
+      >
+        Contact <span className="text-red-400">ME!</span>
+      </motion.h1>
+      <div className="w-10/12 flex justify-between max-md:flex-col">
+        <motion.div
+          className="border-r border-red-200 flex-1 text-white p-20 font-bold max-md:border-none max-md:p-12 max-sm:p-4"
+          variants={itemVariants}
+        >
           <h2 className="text-xl max-sm:text-sm">My Name:</h2>
-          <p className="text-2xl text-red-400 max-sm:text-lg">Abhishek Tyagi</p>
-          <h2 className="mt-9 text-xl max-sm:text-sm max-sm:mt-3">
-            My Email address:
-          </h2>
-          <p className="text-2xl text-red-400 max-sm:text-lg">
+          <p className="text-2xl text-red-400 max-sm:text-lg mb-9">
+            Abhishek Tyagi
+          </p>
+          <h2 className="text-xl max-sm:text-sm">My Email address:</h2>
+          <p className="text-2xl text-red-400 max-sm:text-lg mb-9">
             abhishektyagigi4310@gmail.com
           </p>
-          <h2 className="mt-9 text-xl max-sm:text-sm max-sm:mt-3">
-            My Contact No.:
-          </h2>
-          <p className="text-2xl text-red-400 max-sm:text-lg">+91-8708353162</p>
-          <h2 className="mt-12 text-xl max-sm:mt-4">Let's Connect:</h2>
-          <p className="text-md text-red-400 font-thin max-md:font-bold max-sm:font-thin">
+          <h2 className="text-xl max-sm:text-sm">My Contact No.:</h2>
+          <p className="text-2xl text-red-400 max-sm:text-lg mb-12">
+            +91-8708353162
+          </p>
+          <h2 className="text-xl mb-4">Let's Connect:</h2>
+          <p className="text-md text-red-400 font-thin max-md:font-bold max-sm:font-thin mb-4">
             I'm always open to new opportunities, collaborations, or just a
-            friendly chat. Feel free to reach out through the "Contact" section.
-            Your thoughts and feedback are invaluable to me.
+            friendly chat. Feel free to reach out through the contact form. Your
+            thoughts and feedback are invaluable to me.
           </p>
           <p className="text-md text-red-400 font-thin max-md:font-bold max-sm:font-thin">
             Thank you for stopping by. Enjoy your visit, and let's create
             something amazing together!
           </p>
-        </div>
-        <form
+        </motion.div>
+        <motion.form
           ref={form}
           onSubmit={sendEmail}
-          className="flex flex-col gap-3 flex-1 p-12 max-sm:p-8 max-sm:gap-2 -max-sm:mt-20"
+          className="flex flex-col gap-6 flex-1 p-12 max-sm:p-8 max-sm:gap-4"
+          variants={itemVariants}
         >
-          <input
+          <motion.input
             type="text"
             name="user_name"
-            placeholder="your name"
-            className="p-2 pl-4 text-lg bg-slate-400 rounded border placeholder-gray-600 max-sm:text-sm"
+            placeholder="Your Name"
+            className="p-3 pl-4 text-lg bg-slate-700 text-white rounded border border-red-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300 max-sm:text-sm"
+            whileFocus={{ scale: 1.02 }}
           />
-          <input
+          <motion.input
             type="email"
             name="user_email"
-            placeholder="your email address"
-            className="p-2 pl-4 text-lg bg-slate-400 rounded placeholder-opacity-600 placeholder-gray-600 max-sm:text-sm"
+            placeholder="Your Email Address"
+            className="p-3 pl-4 text-lg bg-slate-700 text-white rounded border border-red-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300 max-sm:text-sm"
+            whileFocus={{ scale: 1.02 }}
           />
-          <textarea
+          <motion.textarea
             name="message"
-            id="cont"
-            cols="30"
-            rows="10"
-            placeholder="enter your text here...."
-            className="p-2 pl-4 text-lg bg-slate-400 rounded placeholder-gray-600 max-sm:text-sm"
-          ></textarea>
-          <input
-            type="submit"
-            className="bg-gradient-to-r from-red-400 to-red-500 p-3 text-xl rounded text-white font-bold  hover:bg-gradient-to-r hover:from-red-500 hover:to-red-500 transition duration-300 ease-in-out"
-            value="Send"
+            placeholder="Enter your message here..."
+            className="p-3 pl-4 text-lg bg-slate-700 text-white rounded border border-red-400 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-400 transition duration-300 max-sm:text-sm"
+            rows="6"
+            whileFocus={{ scale: 1.02 }}
           />
-        </form>
+          <motion.button
+            type="submit"
+            className="bg-gradient-to-r from-red-400 to-red-500 p-3 text-xl rounded text-white font-bold hover:from-red-500 hover:to-red-600 transition duration-300 ease-in-out"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Send Message
+          </motion.button>
+        </motion.form>
       </div>
-      <footer className="bg-gradient-to-r absolute from-cyan-800 to-blue-900 w-full flex justify-evenly items-center h-24 -bottom-24">
+      <motion.footer
+        className="bg-gradient-to-r bottom-0 from-cyan-800 to-blue-900 w-full flex justify-evenly items-center h-24 mt-12"
+        variants={itemVariants}
+      >
         <h2 className="text-white font-bold text-xl max-sm:text-xs">
           Designed and Developed with ❤️ by
           <span className="text-red-400 font-bold text-xl ml-2 max-sm:text-xs">
@@ -97,10 +136,10 @@ const Contact = () => {
           </span>
         </h2>
         <h3 className="text-white font-bold max-sm:text-xs">
-          Copyright &copy; 2024 AT.
+          Copyright &copy; {new Date().getFullYear()} AT.
         </h3>
-      </footer>
-    </div>
+      </motion.footer>
+    </motion.div>
   );
 };
 
