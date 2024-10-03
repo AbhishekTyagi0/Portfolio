@@ -3,7 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { TbBrandRedux } from "react-icons/tb";
 import { IoLogoHtml5 } from "react-icons/io5";
-import { FaAws, FaGitAlt, FaGithub, FaReact } from "react-icons/fa";
+import { FaAws, FaGitAlt, FaGithub, FaNode, FaReact } from "react-icons/fa";
 import {
   SiApifox,
   SiCss3,
@@ -40,6 +40,7 @@ const list = [
   { id: 12, icon: <SiApifox />, name: "API" },
   { id: 13, icon: <SiMongodb />, name: "MongoDB" },
   { id: 14, icon: <SiSupabase />, name: "Supabase" },
+  { id: 15, icon: <FaNode />, name: "NodeJS" },
 ];
 
 const tools = [
