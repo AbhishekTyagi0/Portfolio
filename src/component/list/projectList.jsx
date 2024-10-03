@@ -6,6 +6,7 @@ import cv_builder from "./../../assets/Images/cv.png";
 import memory_game from "./../../assets/Images/memory-game.png";
 import shoppingo from "./../../assets/Images/shoppingo.png";
 import portfolio from "./../../assets/Images/portfolio.png";
+import sunderAI from "./../../assets/Images/sunderAI.png";
 
 export const projectList = [
   {
@@ -92,6 +93,16 @@ export const NextJsProjectList = [
   },
   {
     id: 1,
+    subject: "SunderAI Headshots Generator",
+    src: sunderAI,
+    about: [
+      `Introducing Sunder AI: a powerful platform that harnesses cutting-edge AI technology to create stunning, professional headshots in just minutes. `,
+      `Upload your images, train your model, and elevate your professional presence with personalized portraits tailored to your needs.`,
+    ],
+    live: "https://www.sunderai.com/",
+  },
+  {
+    id: 2,
     subject: "Advocate Landing Page",
     src: advshiva,
     about: [

@@ -28,7 +28,7 @@ const ProjectCard = ({ project, index }) => {
         </a>
       </motion.div>
 
-      <div className="w-full p-4">
+      <div className="w-full p-2">
         <motion.div
           className="flex justify-between"
           initial={{ opacity: 0, x: -20 }}
