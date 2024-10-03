@@ -31,17 +31,17 @@ const Home = ({ nav }) => {
           </span>
         </h2>
         <p className="text-lg max-md:text-base">
-          Dynamic Next.js and React.js Developer with a strong foundation in
-          building responsive and scalable web applications. Proficient in
-          modern web technologies, including TypeScript, Tailwind CSS, and
-          MongoDB. Experienced in integrating third-party services and enhancing
-          user experience.
+          Dynamic Next.js, Node.js and React.js Developer with a strong
+          foundation in building responsive and scalable web applications.
+          Proficient in modern web technologies, including TypeScript, Tailwind
+          CSS, and MongoDB. Experienced in integrating third-party services and
+          enhancing user experience.
         </p>
-        <div className="flex gap-4 mt-6">
+        <div className="flex gap-4 mt-6 max-md:grid grid-cols-2">
           <a
             href={resume}
             download
-            className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-2 md:px-6 rounded-full text-sm md:text-lg transition-colors duration-300"
+            className="bg-blue-600 hover:bg-blue-700 flex justify-center text-white py-2 px-2 md:px-6 rounded-full text-sm md:text-lg transition-colors duration-300"
           >
             Download Resume
           </a>
@@ -49,9 +49,17 @@ const Home = ({ nav }) => {
             href="https://shricode.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-green-600 hover:bg-green-700 text-white py-2 px-2 md:px-6 rounded-full text-sm md:text-lg transition-colors duration-300"
+            className="bg-green-600 hover:bg-green-700 flex justify-center text-white py-2 px-2 md:px-6 rounded-full text-sm md:text-lg transition-colors duration-300"
           >
             Check Out My Blog
+          </a>
+          <a
+            href="https://www.sunderai.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-purple-600 hover:bg-purple-700 flex justify-center text-white py-2 px-2 md:px-6 rounded-full text-sm md:text-lg transition-colors duration-300"
+          >
+            Check Out My AI SAAS
           </a>
         </div>
         <ul className="flex gap-6 mt-8 text-3xl">
@@ -97,7 +105,7 @@ const Home = ({ nav }) => {
         >
           <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-red-400 shadow-lg shadow-red-400/50">
             <img
-              src="/mypic.jpg"
+              src="/newPic.jpg"
               alt="Abhishek Tyagi"
               className="w-full h-full object-cover"
             />
