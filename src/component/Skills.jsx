@@ -10,11 +10,13 @@ import {
   SiDiscord,
   SiFigma,
   SiJirasoftware,
+  SiMongodb,
   SiNetlify,
   SiNextdotjs,
   SiNpm,
   SiPostman,
   SiReduxsaga,
+  SiSupabase,
   SiTailwindcss,
   SiTypescript,
   SiVercel,
@@ -36,6 +38,8 @@ const list = [
   { id: 7, icon: <GrMysql />, name: "MySQl" },
   { id: 8, icon: <FaGitAlt />, name: "Git" },
   { id: 12, icon: <SiApifox />, name: "API" },
+  { id: 13, icon: <SiMongodb />, name: "MongoDB" },
+  { id: 14, icon: <SiSupabase />, name: "Supabase" },
 ];
 
 const tools = [
